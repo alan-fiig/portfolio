@@ -1,0 +1,39 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Agosto 2023 - Presente",
+    title: "Desarrollador Full Stack",
+    company: "Gofrida",
+    description: [
+      "Diseñé e implementé notificaciones automáticas por correo electrónico con Action Mailer, optimizando la comunicación con clientes.",
+      "Desarrollé un sistema de gestión de pedidos recurrentes, automatizando la generación y procesamiento de órdenes.",
+      "Implementé colas de trabajo y procesamiento en segundo plano con Active Job y Shoryuken, mejorando la eficiencia en el manejo de tareas asíncronas.",
+      "Diseñé e implementé formularios dinámicos y personalizados para mejorar la interacción del usuario y la recolección de datos.",
+      "Integré APIs externas y servicios en la nube, ampliando la funcionalidad de la aplicación.",
+      "Construí interfaces responsivas y atractivas con Tailwind CSS, mejorando la experiencia de usuario.",
+      "Implementé y personalicé componentes en React, incorporando hooks y manejo de estado para interfaces altamente interactivas.",
+    ],
+  },
+  {
+    date: "Febrero 2023 - Junio 2023",
+    title: "Prácticas en Automatización de Procesos",
+    company: "R O B O Y O",
+    description: [
+      "Desarrollé bots para automatizar procesos como la generación de correos, firma de documentos PDF y recolección de datos.",
+      "Implementé un framework de automatización en Excel, permitiendo la ejecución automática de hasta seis funciones personalizadas.",
+      "Apliqué técnicas de inteligencia artificial y utilicé RPA (Robotic Process Automation) con UiPath, fortaleciendo mi experiencia en automatización de procesos.",
+    ],
+  },
+];
+---
+
+<ol class="max-w-[1200px] mx-auto relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
