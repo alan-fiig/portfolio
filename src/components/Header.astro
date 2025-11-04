@@ -1,3 +1,33 @@
+---
+const navItems = [
+  {
+    title: "Inicio",
+    label: "home",
+    url: "/portfolio/#home",
+  },
+  {
+    title: "Experiencia",
+    label: "experience",
+    url: "/portfolio/#experience",
+  },
+  {
+    title: "Proyectos",
+    label: "projects",
+    url: "/portfolio/#projects",
+  },
+  {
+    title: "Sobre mí",
+    label: "about-me",
+    url: "/portfolio/#about-me",
+  },
+  {
+    title: "Contacto",
+    label: "contact",
+    url: "mailto:alan.figueroa@hotmail.com",
+  },
+];
+---
+
 <header>
   <a class="logo" href="#">
     <i class="logo-icon fa-solid fa-code"></i>
@@ -9,16 +39,24 @@
       <i class="fa-solid fa-bars"></i>
     </div>
     <ul>
-      <li><a href="#home">Inicio</a></li>
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      {
+        navItems.map((link) => (
+          <li>
+            <a aria-label={link.label} href={link.url}>
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   header {
     position: fixed;
     top: 0;
