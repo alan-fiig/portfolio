@@ -3,36 +3,48 @@ import GitHub from "./icons/GitHub.astro";
 import Ruby from "./icons/Ruby.astro";
 import Rails from "./icons/Rails.astro";
 import React from "./icons/React.astro";
+import JavaScript from "./icons/JavaScript.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Godot from "./icons/Godot.astro";
+import CSharp from "./icons/CSharp.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   RUBY: {
     name: "Ruby",
-    class: "bg-white text-black",
+    class: "bg-[#8E241F]",
     icon: Ruby,
   },
   RAILS: {
-    name: "Ruby on Rails",
-    class: "bg-white text-black",
+    name: "Rails",
+    class: "bg-[#A30000]",
     icon: Rails,
   },
   REACT: {
     name: "React",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#306D7D]",
     icon: React,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#A89937]",
+    icon: JavaScript,
+  },
   TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    name: "Tailwind",
+    class: "bg-[#003159]",
     icon: Tailwind,
   },
   GODOT: {
     name: "Godot",
-    class: "bg-[#474FBF] text-white",
+    class: "bg-[#2A5472]",
     icon: Godot,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "bg-[#68217A]",
+    icon: CSharp,
   },
 };
 const PROJECTS = [
@@ -42,16 +54,16 @@ const PROJECTS = [
       "Plataforma web para conectar dueños de mascotas con cuidadores confiables. Cuenta con servicios de hospedaje, guardería, visitas y paseos para mascotas. Desarrollada con Ruby on Rails, React y Tailwind CSS.",
     link: "https://www.guardiandemascotas.com",
     image: "/portfolio/projects/gofrida.webp",
-    tags: [TAGS.RUBY, TAGS.RAILS, TAGS.REACT, TAGS.TAILWIND],
+    tags: [TAGS.RUBY, TAGS.RAILS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   },
   {
     title: "A L O N E - Videojuego Indie",
     description:
-      "Videojuego de plataforma en 2D desarrollado en Godot. Explora niveles misterioso y enfrenta desafíos para descubrir la historia detrás de tu soledad.",
+      "Videojuego de plataforma en 2D desarrollado en Godot. Explora niveles misteriosos y enfrenta desafíos para descubrir la historia detrás de tu soledad.",
     link: "https://alan-alone.itch.io/a-l-o-n-e",
     github: "https://github.com/alan-fiig/ALONE",
     image: "/portfolio/projects/alone.webp",
-    tags: [TAGS.GODOT],
+    tags: [TAGS.GODOT, TAGS.CSHARP],
   },
 ];
 ---
@@ -63,7 +75,7 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              alt="Image preview"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
@@ -73,8 +85,8 @@ const PROJECTS = [
 
         <div class="w-full md:w-1/2 md:max-w-lg">
           <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+          <div class="flex flex-wrap mt-2 gap-2">
+            <ul class="flex flex-row flex-wrap gap-x-2 gap-y-2">
               {tags.map((tag) => (
                 <li>
                   <span
@@ -87,8 +99,8 @@ const PROJECTS = [
               ))}
             </ul>
 
-            <div class="mt-2 text-gray-400">{description}</div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
+            <div class="mt-2 text-gray-400 w-full">{description}</div>
+            <footer class="flex flex-wrap items-end justify-start mt-4 gap-x-4 gap-y-4">
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
