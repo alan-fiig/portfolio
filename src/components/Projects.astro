@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import gofrida from "../../public/projects/gofrida.webp";
+import alone from "../../public/projects/alone.webp";
 import GitHub from "./icons/GitHub.astro";
 import Ruby from "./icons/Ruby.astro";
 import Rails from "./icons/Rails.astro";
@@ -53,7 +56,7 @@ const PROJECTS = [
     description:
       "Plataforma web para conectar dueños de mascotas con cuidadores confiables. Cuenta con servicios de hospedaje, guardería, visitas y paseos para mascotas. Desarrollada con Ruby on Rails, React y Tailwind CSS.",
     link: "https://www.guardiandemascotas.com",
-    image: "/portfolio/projects/gofrida.webp",
+    image: gofrida,
     tags: [TAGS.RUBY, TAGS.RAILS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   },
   {
@@ -62,7 +65,7 @@ const PROJECTS = [
       "Videojuego de plataforma en 2D desarrollado en Godot. Explora niveles misteriosos y enfrenta desafíos para descubrir la historia detrás de tu soledad.",
     link: "https://alan-alone.itch.io/a-l-o-n-e",
     github: "https://github.com/alan-fiig/ALONE",
-    image: "/portfolio/projects/alone.webp",
+    image: alone,
     tags: [TAGS.GODOT, TAGS.CSHARP],
   },
 ];
@@ -71,11 +74,11 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
+      <article class="flex flex-col space-x-0 space-y-8 group lg:flex-row lg:space-x-8 lg:space-y-0">
+        <div class="w-full lg:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Image preview"
+            <Image
+              alt={title}
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
@@ -83,7 +86,7 @@ const PROJECTS = [
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
+        <div class="w-full lg:w-1/2 lg:max-w-lg">
           <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
           <div class="flex flex-wrap mt-2 gap-2">
             <ul class="flex flex-row flex-wrap gap-x-2 gap-y-2">
