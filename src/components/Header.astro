@@ -29,11 +29,6 @@ const navItems = [
 ---
 
 <header>
-  <a class="logo" href="#">
-    <i class="logo-icon fa-solid fa-code"></i>
-    <span class="logo-text">Alan Figueroa</span>
-  </a>
-
   <nav>
     <div class="menu-toggle">
       <i class="fa-solid fa-bars"></i>
@@ -52,6 +47,51 @@ const navItems = [
   </nav>
 </header>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("nav a[href*='#']");
+
+    const updateActiveLink = () => {
+      let currentSection = "";
+
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+
+      if (isAtBottom) {
+        currentSection = "about-me";
+      } else {
+        for (const link of navLinks) {
+          const href = link.getAttribute("href");
+          const sectionId = href?.split("#")[1];
+
+          if (sectionId && sectionId !== "contact") {
+            const section = document.getElementById(sectionId);
+            if (section) {
+              const rect = section.getBoundingClientRect();
+              if (rect.top <= 100 && rect.bottom >= 100) {
+                currentSection = sectionId;
+              }
+            }
+          }
+        }
+      }
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        const sectionId = href?.split("#")[1];
+        if (sectionId === currentSection) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink();
+  });
+</script>
+
 <style>
   html {
     scroll-behavior: smooth;
@@ -62,9 +102,9 @@ const navItems = [
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 25px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     z-index: 1000;
     background: rgba(12, 15, 23, 0.8);
@@ -124,6 +164,14 @@ const navItems = [
   }
 
   nav a:hover::after {
+    width: 100%;
+  }
+
+  nav a.active {
+    color: #2afc85;
+  }
+
+  nav a.active::after {
     width: 100%;
   }
 
