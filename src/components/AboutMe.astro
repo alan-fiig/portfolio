@@ -1,3 +1,13 @@
+---
+import { parseMultipleHighlights } from "../utils/highlightText";
+
+const { text1, text2, text3 } = Astro.props;
+
+const text1Parts = parseMultipleHighlights(text1);
+const text2Parts = parseMultipleHighlights(text2);
+const text3Parts = parseMultipleHighlights(text3);
+---
+
 <article
   class="flex flex-col items-center justify-center gap-8 text-gray-300 md:flex-row"
 >
@@ -5,28 +15,39 @@
     class="[&>p]:mb-4 [&>p>strong]:text-[#2afc85] [&>p>strong]:font-normal [&>p>strong]:font-mono text-lg text-pretty order-2 md:order-1"
   >
     <p>
-      Soy Alan, y desde que escribí mis primeras líneas de código entendí que
-      programar no es solo <strong>hacer que las cosas funcionen,</strong> sino <strong
-        >crear experiencias que realmente aporten valor.</strong
-      >
+      {
+        text1Parts.map((part) =>
+          part.type === "highlighted" ? (
+            <strong>{part.content}</strong>
+          ) : (
+            part.content
+          )
+        )
+      }
     </p>
 
     <p>
-      Disfruto transformar ideas en <strong
-        >productos claros, funcionales y bien construidos.</strong
-      > Me gusta <strong> cuidar los detalles,</strong> pensar en las personas que
-      usarán lo que desarrollo y buscar <strong
-        >soluciones simples a problemas complejos.</strong
-      >
-      Para mí, un buen código no solo se ejecuta: se entiende, se mantiene y evoluciona.
+      {
+        text2Parts.map((part) =>
+          part.type === "highlighted" ? (
+            <strong>{part.content}</strong>
+          ) : (
+            part.content
+          )
+        )
+      }
     </p>
 
     <p>
-      Trabajo principalmente con tecnologías web modernas, combinando <strong
-        >lógica, diseño y estructura</strong
-      > para crear <strong>aplicaciones sólidas y agradables de usar.</strong>
-      Aprendo de forma constante, me adapto con facilidad y afronto nuevos retos con
-      entusiasmo.
+      {
+        text3Parts.map((part) =>
+          part.type === "highlighted" ? (
+            <strong>{part.content}</strong>
+          ) : (
+            part.content
+          )
+        )
+      }
     </p>
   </div>
 

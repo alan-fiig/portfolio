@@ -13,6 +13,18 @@ import CSharp from "./icons/CSharp.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
+interface ProjectItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  project: Record<string, ProjectItem>;
+}
+
+const { project } = Astro.props as Props;
+const projectArray = Object.values(project);
+
 const TAGS = {
   RUBY: {
     name: "Ruby",
@@ -50,19 +62,18 @@ const TAGS = {
     icon: CSharp,
   },
 };
+
 const PROJECTS = [
   {
-    title: "Gofrida - Guardian de Mascotas",
-    description:
-      "Plataforma web para conectar dueños de mascotas con cuidadores confiables. Cuenta con servicios de hospedaje, guardería, visitas y paseos para mascotas. Desarrollada con Ruby on Rails, React, JavaScript y Tailwind.",
+    title: projectArray[0]?.title || "",
+    description: projectArray[0]?.description || "",
     link: "https://www.guardiandemascotas.com",
     image: gofrida,
     tags: [TAGS.RUBY, TAGS.RAILS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   },
   {
-    title: "A L O N E - Videojuego Indie",
-    description:
-      "Videojuego de plataforma en 2D desarrollado en Godot. Explora niveles misteriosos y enfrenta desafíos para descubrir la historia detrás de tu soledad.",
+    title: projectArray[1]?.title || "",
+    description: projectArray[1]?.description || "",
     link: "https://alan-alone.itch.io/a-l-o-n-e",
     github: "https://github.com/alan-fiig/ALONE",
     image: alone,

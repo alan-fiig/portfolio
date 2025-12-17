@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ExperienceList({ description }) {
+export default function ExperienceList({ description, showMore, showLess }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ export default function ExperienceList({ description }) {
           type="button"
           onClick={() => setShowAll(!showAll)}
         >
-          {showAll ? "Mostrar menos" : "Mostrar más"}
+          {showAll ? showLess : showMore}
           {showAll ? (
             <i className="fa-solid fa-arrow-up"></i>
           ) : (

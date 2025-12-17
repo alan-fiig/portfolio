@@ -1,28 +1,31 @@
 ---
+import { parseHighlightedText } from "../utils/highlightText";
 import GitHub from "./icons/GitHub.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Mail from "./icons/Mail.astro";
+
+const { title, text, buttonText, linkCV } = Astro.props;
+const { normal, highlighted } = parseHighlightedText(title);
 ---
 
 <section class="hero">
   <div class="content">
     <h1>Alan Figueroa</h1>
-    <h2>Ingeniero de <span class="typing-text">Software</span></h2>
+    <h2>{normal} <span class="typing-text">{highlighted}</span></h2>
     <p>
-      ¡Hola! Soy Alan, un desarrollador web con más de 2 años de experiencia,
-      especializado en crear aplicaciones web modernas y eficientes.
+      {text}
     </p>
 
     <div class="buttons-actions">
       <div class="cta-buttons">
         <a
-          href="https://drive.google.com/file/d/1fQmn9rSgFTX44NjEUmpvRL2vEXiVIdS2/view?usp=sharing"
+          href={linkCV}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="CV de Alan"
           class="btn btn-primary"
         >
-          Ver CV
+          {buttonText}
         </a>
       </div>
 
@@ -31,7 +34,7 @@ import Mail from "./icons/Mail.astro";
           href="https://github.com/alan-fiig"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub de Alan"
+          aria-label="GitHub Alan"
         >
           <GitHub />
         </a>
@@ -40,7 +43,7 @@ import Mail from "./icons/Mail.astro";
           href="https://www.linkedin.com/in/alan-fiig"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn de Alan"
+          aria-label="LinkedIn Alan"
         >
           <LinkedIn />
         </a>

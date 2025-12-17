@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const { footerText } = Astro.props;
 ---
 
 <footer
@@ -8,7 +9,7 @@ const currentYear = new Date().getFullYear();
   <div class="flex">
     <span class="text-sm sm:text-center text-zinc-200/90">
       &copy; {currentYear}
-      Alan. Todos los derechos reservados
+      {footerText}
     </span>
   </div>
 </footer>

@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import Experience from "../../components/Experience.astro";
+import Projects from "../../components/Projects.astro";
+import AboutMe from "../../components/AboutMe.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import TitleSection from "../../components/TitleSection.astro";
+import Briefcase from "../../components/icons/Briefcase.astro";
+import Code from "../../components/icons/Code.astro";
+import ProfileCheck from "../../components/icons/ProfileCheck.astro";
+import es from "../../i18n/es";
+import en from "../../i18n/en";
+import type { Language } from "../../types/language.type";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+}
+
+export const defaultRedirect = "/es";
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+
+<Layout lang={lang} t={t} footerText={t.footer.text}>
+  <main id="home">
+    <Hero
+      title={t.hero.title}
+      text={t.hero.text}
+      buttonText={t.hero.buttonText}
+      linkCV={t.hero.linkCV}
+    />
+  </main>
+
+  <div class="space-y-16">
+    <SectionContainer id="experience">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        {t.experience.title}
+      </TitleSection>
+      <Experience
+        job={t.experience.job}
+        showMore={t.experience.showMore}
+        showLess={t.experience.showLess}
+      />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <TitleSection>
+        <Code class="size-8" />
+        {t.projects.title}
+      </TitleSection>
+      <Projects project={t.projects.project} />
+    </SectionContainer>
+
+    <SectionContainer id="about-me">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        {t.about.title}
+      </TitleSection>
+      <AboutMe
+        text1={t.about.text1}
+        text2={t.about.text2}
+        text3={t.about.text3}
+      />
+    </SectionContainer>
+  </div>
+</Layout>
