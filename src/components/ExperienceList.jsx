@@ -17,11 +17,6 @@ export default function ExperienceList({ description, showMore, showLess }) {
           onClick={() => setShowAll(!showAll)}
         >
           {showAll ? showLess : showMore}
-          {showAll ? (
-            <i className="fa-solid fa-arrow-up"></i>
-          ) : (
-            <i class="fa-solid fa-arrow-down"></i>
-          )}
         </button>
       )}
     </>
