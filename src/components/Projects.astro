@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import gofrida from "../../public/projects/gofrida.webp";
+import gofridaStore from "../../public/projects/gofrida-store.webp";
 import alone from "../../public/projects/alone.webp";
 import GitHub from "./icons/GitHub.astro";
 import Ruby from "./icons/Ruby.astro";
@@ -10,6 +11,10 @@ import JavaScript from "./icons/JavaScript.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Godot from "./icons/Godot.astro";
 import CSharp from "./icons/CSharp.astro";
+import Postgresql from "./icons/Postgresql.astro";
+import Stripe from "./icons/Stripe.astro";
+import Solidus from "./icons/Solidus.astro";
+import Aws from "./icons/Aws.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -61,6 +66,26 @@ const TAGS = {
     class: "bg-[#68217A]",
     icon: CSharp,
   },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#285274]",
+    icon: Postgresql,
+  },
+  STRIPE: {
+    name: "Stripe",
+    class: "bg-[#312D7F]",
+    icon: Stripe,
+  },
+  SOLIDUS: {
+    name: "Solidus",
+    class: "bg-[#9C241C]",
+    icon: Solidus,
+  },
+  AWS: {
+    name: "AWS",
+    class: "bg-[#995B00]",
+    icon: Aws,
+  },
 };
 
 const PROJECTS = [
@@ -69,11 +94,35 @@ const PROJECTS = [
     description: projectArray[0]?.description || "",
     link: "https://www.guardiandemascotas.com",
     image: gofrida,
-    tags: [TAGS.RUBY, TAGS.RAILS, TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
+    tags: [
+      TAGS.RUBY,
+      TAGS.RAILS,
+      TAGS.JAVASCRIPT,
+      TAGS.REACT,
+      TAGS.POSTGRESQL,
+      TAGS.AWS,
+      TAGS.TAILWIND,
+    ],
   },
   {
     title: projectArray[1]?.title || "",
     description: projectArray[1]?.description || "",
+    link: "https://gofrida.mx",
+    image: gofridaStore,
+    tags: [
+      TAGS.RUBY,
+      TAGS.RAILS,
+      TAGS.JAVASCRIPT,
+      TAGS.STRIPE,
+      TAGS.SOLIDUS,
+      TAGS.POSTGRESQL,
+      TAGS.AWS,
+      TAGS.TAILWIND,
+    ],
+  },
+  {
+    title: projectArray[0]?.title || "",
+    description: projectArray[2]?.description || "",
     link: "https://alan-alone.itch.io/a-l-o-n-e",
     github: "https://github.com/alan-fiig/ALONE",
     image: alone,

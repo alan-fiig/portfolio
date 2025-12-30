@@ -74,9 +74,13 @@ export default {
     project: {
       project1: {
         title: "Gofrida - Pet Care Platform",
-        description: "Web platform to connect pet owners with reliable caregivers. It offers services such as boarding, daycare, visits and walks for pets. Developed with Ruby on Rails, React, JavaScript and Tailwind.",
+        description: "Web platform to connect pet owners with reliable caregivers. It offers services such as boarding, daycare, visits and walks for pets.",
       },
       project2: {
+        title: "Gofrida - Pet Store",
+        description: "Online store specialized in products for pet care. Offers a wide range of foods for both dogs and cats of any age.",
+      },
+      project3: {
         title: "A L O N E - Indie Video Game",
         description: "2D platform video game developed in Godot. Explore mysterious levels and face challenges to discover the story behind your solitude.",
       }

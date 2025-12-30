@@ -74,9 +74,13 @@ export default {
     project: {
       project1: {
         title: "Gofrida - Guardian de Mascotas",
-        description: "Plataforma web para conectar dueños de mascotas con cuidadores confiables. Cuenta con servicios de hospedaje, guardería, visitas y paseos para mascotas. Desarrollada con Ruby on Rails, React, JavaScript y Tailwind.",
+        description: "Plataforma web para conectar dueños de mascotas con cuidadores confiables. Cuenta con servicios de hospedaje, guardería, visitas y paseos para mascotas.",
       },
       project2: {
+        title: "Gofrida - Tienda de Mascotas",
+        description: "Tienda en línea especializada en productos para el cuidado de mascotas. Ofrece una amplia gama de alimentos tanto para perros como para gatos de cualquier edad.",
+      },
+      project3: {
         title: "A L O N E - Videojuego Indie",
         description: "Videojuego de plataforma en 2D desarrollado en Godot. Explora niveles misteriosos y enfrenta desafíos para descubrir la historia detrás de tu soledad.",
       }
