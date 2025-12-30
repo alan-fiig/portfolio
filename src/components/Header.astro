@@ -37,8 +37,19 @@ const navItems = [
 
 <header>
   <nav>
-    <div class="menu-toggle">
-      <i class="fa-solid fa-bars"></i>
+    <div class="menu-toggle" aria-label="menu" role="button" tabindex="0">
+      <svg
+        class="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"
+        ></path>
+      </svg>
     </div>
     <ul>
       {
@@ -53,7 +64,7 @@ const navItems = [
     </ul>
   </nav>
 
-  <form class="ml-[30px]">
+  <form id="lang-form" class="ml-[30px] hidden md:block">
     <div class="relative">
       <select
         id="lang-select"
@@ -188,6 +199,21 @@ const navItems = [
     cursor: pointer;
   }
 
+  .menu-toggle:focus {
+    outline: none;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 2px solid rgba(42, 252, 133, 0.15);
+    border-radius: 4px;
+  }
+
+  .menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+
   @media (max-width: 768px) {
     header {
       padding: 15px 20px;
@@ -195,7 +221,7 @@ const navItems = [
 
     nav ul {
       position: fixed;
-      top: 70px;
+      top: 67px;
       left: -100%;
       width: 100%;
       height: calc(100vh - 70px);
@@ -218,6 +244,15 @@ const navItems = [
 
     .menu-toggle {
       display: block;
+    }
+
+    nav ul .mobile-lang-form {
+      margin-left: 0 !important;
+      align-self: center;
+      width: calc(100% - 40px);
+      padding: 0 20px;
+      display: flex !important;
+      justify-content: center;
     }
   }
 </style>
