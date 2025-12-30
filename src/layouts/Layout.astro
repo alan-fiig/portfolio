@@ -19,7 +19,9 @@ const { lang, t, footerText } = Astro.props;
       src="https://kit.fontawesome.com/df4794220c.js"
       crossorigin="anonymous"
       defer></script>
-    <title>Portafolio</title>
+    <title>
+      {t.header.title}
+    </title>
   </head>
   <body>
     <Header lang={lang} t={t} />
