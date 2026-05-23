@@ -9,7 +9,7 @@ export default {
     title: "Portfolio",
   },
 
-  nav: { 
+  nav: {
     home: "Home",
     experience: "Experience",
     projects: "Projects",
@@ -21,13 +21,28 @@ export default {
     title: "Software {Engineer}",
     text: "Hello! I'm Alan, a web developer with over 2 years of experience, specializing in creating modern and efficient web applications.",
     buttonText: "View CV",
-    linkCV: "https://drive.google.com/file/d/1t4XZ76fI4Rn9kEl7GmqL6HjZqPmKRzkY/view?usp=sharing",
+    linkCV:
+      "https://drive.google.com/file/d/1t4XZ76fI4Rn9kEl7GmqL6HjZqPmKRzkY/view?usp=sharing",
   },
 
   experience: {
     title: "Experience",
     job: {
-      job1: {
+      job4: {
+        title: "Full Stack Developer",
+        company: "MSW Technologies",
+        date: "February 20256 - Present",
+        description: [
+          "Designed, optimized, and managed databases focused on data analysis and information processing.",
+          "Created and maintained SQL Server Stored Procedures (SP) to improve query performance and processes.",
+          "Developed backend solutions by building RESTful APIs, endpoints, and services integrated with database systems.",
+          "Built modern and responsive user interfaces using React and TypeScript.",
+          "Implemented scalable architectures and maintained high-performance, reliable backend services.",
+          "Integrated dynamic charts and data visualizations connected to backend APIs for real-time data analysis.",
+          "I developed interactive, real-time data tables.",
+        ],
+      },
+      job3: {
         title: "Frontend Developer",
         company: "Albbus",
         date: "October 2025 - December 2025",
@@ -54,7 +69,7 @@ export default {
           "Implemented and customized components in React, incorporating hooks and state management for highly interactive interfaces.",
         ],
       },
-      job3: {
+      job1: {
         date: "February 2023 - June 2023",
         title: "Process Automation Intern",
         company: "R O B O Y O",
@@ -63,7 +78,7 @@ export default {
           "Implemented an automation framework in Excel, allowing automatic execution of up to six custom functions.",
           "Applied artificial intelligence techniques and used RPA (Robotic Process Automation) with UiPath, strengthening my experience in process automation.",
         ],
-      } 
+      },
     },
     showMore: "Show more",
     showLess: "Show less",
@@ -74,27 +89,33 @@ export default {
     project: {
       project1: {
         title: "Gofrida - Pet Care Platform",
-        description: "Web platform to connect pet owners with reliable caregivers. It offers services such as boarding, daycare, visits and walks for pets.",
+        description:
+          "Web platform to connect pet owners with reliable caregivers. It offers services such as boarding, daycare, visits and walks for pets.",
       },
       project2: {
         title: "Gofrida - Pet Store",
-        description: "Online store specialized in products for pet care. Offers a wide range of foods for both dogs and cats of any age.",
+        description:
+          "Online store specialized in products for pet care. Offers a wide range of foods for both dogs and cats of any age.",
       },
       project3: {
         title: "A L O N E - Indie Video Game",
-        description: "2D platform video game developed in Godot. Explore mysterious levels and face challenges to discover the story behind your solitude.",
-      }
-    }
+        description:
+          "2D platform video game developed in Godot. Explore mysterious levels and face challenges to discover the story behind your solitude.",
+      },
+    },
   },
 
-   about: {
+  about: {
     title: "About Me",
-    text1: "I'm Alan, and since I wrote my first lines of code, I understood that programming is not just {making things work,} but {creating experiences that truly add value.}",
-    text2: "I enjoy transforming ideas into {clear, functional and well-built products.} I like to {pay attention to details,} think about the people who will use what I develop and look for {simple solutions to complex problems.} To me, good code is not just executed: it's understood, maintained and evolves.",
-    text3: "I mainly work with modern web technologies, combining {logic, design and structure} to create {solid and pleasant-to-use applications.} I learn constantly, adapt easily and face new challenges with enthusiasm.",
+    text1:
+      "I'm Alan, and since I wrote my first lines of code, I understood that programming is not just {making things work,} but {creating experiences that truly add value.}",
+    text2:
+      "I enjoy transforming ideas into {clear, functional and well-built products.} I like to {pay attention to details,} think about the people who will use what I develop and look for {simple solutions to complex problems.} To me, good code is not just executed: it's understood, maintained and evolves.",
+    text3:
+      "I mainly work with modern web technologies, combining {logic, design and structure} to create {solid and pleasant-to-use applications.} I learn constantly, adapt easily and face new challenges with enthusiasm.",
   },
 
   footer: {
     text: "All rights reserved",
   },
-}
+};
