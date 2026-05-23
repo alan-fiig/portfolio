@@ -31,7 +31,7 @@ export default {
       job4: {
         title: "Desarrollador Full Stack",
         company: "MSW Tecnologías",
-        date: "Febrero 20256 - Presente",
+        date: "Febrero 2026 - Presente",
         description: [
           "Diseñé, optimicé y gestioné bases de datos enfocadas en el análisis de datos y el procesamiento de información.",
           "Cree y mantuve Stored Procedures (SP) en SQL Server para mejorar el rendimiento de las consultas y los procesos.",
